@@ -1,6 +1,7 @@
 package com.techchefweb.controler;
 
 import com.techchefweb.model.Product;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -68,6 +69,21 @@ public class ProductController {
     @GetMapping("products/by-title/{title}")
     public Product findProductByTitle(@PathVariable String title){
         return new Product(1L, title, 399.0, true, LocalDate.now());
+
+    }
+
+    @GetMapping("products/by-price/min/{min}/max/{max}")
+    public List<Product> findProductByprice(@PathVariable Double min, @PathVariable Double max){
+
+
+        return List.of(
+                new Product(1L, "Tv Samsung 52", 400.0, true, LocalDate.now()),
+                new Product(2L, "PC MSI modern", 600.0, false, LocalDate.now()),
+                new Product(3L, "One plus 12", 900.0, false, null),
+                new Product(3L, "Android", 100.0, false, null)
+        );
+
+
 
     }
 
