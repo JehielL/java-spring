@@ -1,4 +1,4 @@
-package com.techchefweb;
+package com.techchefweb.model;
 
 public class Customer {
     private String nif;

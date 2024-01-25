@@ -1,4 +1,4 @@
-package com.techchefweb;
+package com.techchefweb.controler;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
