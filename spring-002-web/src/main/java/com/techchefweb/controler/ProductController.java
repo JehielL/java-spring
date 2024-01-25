@@ -90,6 +90,22 @@ public class ProductController {
 
     }
 
+    @PutMapping("/products/{id}")
+    public Product update(@PathVariable Long id,
+                          @RequestBody Product product){
+        System.out.println(product.id());
+
+        return product;
+
+    }
+
+    @DeleteMapping("/products/{id}")
+    public void deleteById(@PathVariable Long id){
+
+        System.out.println("Borrando producto " + id);
+
+    }
+
 }
 
 
