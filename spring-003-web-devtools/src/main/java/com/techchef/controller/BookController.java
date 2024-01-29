@@ -1,7 +1,7 @@
-package com.certidevs.controller;
+package com.techchef.controller;
 
-import com.certidevs.model.Author;
-import com.certidevs.model.Book;
+import com.techchef.model.Author;
+import com.techchef.model.Book;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,8 +49,16 @@ public class BookController {
     }
 
     @GetMapping("books/{id}")
-    public List<Book> findById(@PathVariable Long id){
-        return books;
+    public ResponseEntity<Book> findById(@PathVariable Long id){
+        for(Book book:this.books){
+
+            if (book.id().equals(id)){
+
+                return ResponseEntity.ok(book);
+            }
+        }
+
+        return ResponseEntity.notFound().build();
     }
 
 

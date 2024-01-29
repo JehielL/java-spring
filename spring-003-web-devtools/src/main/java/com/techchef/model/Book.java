@@ -1,4 +1,4 @@
-package com.certidevs.model;
+package com.techchef.model;
 
 public record Book(Long id,
                    String title,
