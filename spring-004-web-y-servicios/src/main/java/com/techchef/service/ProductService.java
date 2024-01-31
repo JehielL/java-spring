@@ -40,4 +40,13 @@ public class ProductService {
         return new ArrayList<>(products); // crea una copia del array list
 
     }
+
+    public Double calculateTotalPrice(){
+
+        return 100.0;
+    }
+
+    public Boolean checkIfShopCartHasProducts(){
+        return !this.products.isEmpty();
+    }
 }
