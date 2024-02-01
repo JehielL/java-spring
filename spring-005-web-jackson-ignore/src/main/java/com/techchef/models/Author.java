@@ -1,14 +1,25 @@
 package com.techchef.models;
 
-import java.time.LocalDate;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Author {
     private Long id;
     private String name;
     private String Biography;
     private LocalDate startCarrer;
-    private List<Book> books;
+    @JsonIgnoreProperties("author")
+    private List<Book> books = new ArrayList<>();
+
+
 
     //asociacion
 
