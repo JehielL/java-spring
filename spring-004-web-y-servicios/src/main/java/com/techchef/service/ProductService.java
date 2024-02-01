@@ -10,9 +10,13 @@ import java.util.List;
 public class ProductService {
 
     private List<Product> products;
+    private UserService userService;
 
-    public ProductService() {
 
+    public ProductService(UserService userService) {
+        this.userService = userService;
+        this.userService.findById(1L);
+        System.out.println("User service inyectado correctamente en productService");
         products = new ArrayList<>();
         products.add(Product.builder()
                 .id(1L)
@@ -32,6 +36,7 @@ public class ProductService {
         product3.setType(ProductType.SMART_TV);
         product3.setIsAvailable(true);
         products.add(product3);
+        System.out.println(product3);
 
     }
 
