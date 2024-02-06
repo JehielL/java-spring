@@ -27,4 +27,14 @@ public class Book {
     @ManyToOne
     private Author author;
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", numPages=" + numPages +
+                ", price=" + price +
+                '}';
+    }
 }

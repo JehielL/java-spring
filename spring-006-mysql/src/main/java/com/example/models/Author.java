@@ -33,5 +33,15 @@ public class Author {
 
     private LocalDate creationDate;
 
-
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", salary=" + salary +
+                ", active=" + active +
+                ", creationDate=" + creationDate +
+                '}';
+    }
 }
