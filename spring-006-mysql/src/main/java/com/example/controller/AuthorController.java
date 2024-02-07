@@ -59,4 +59,12 @@ public class AuthorController {
         authorFromDB.setSalary(author.getSalary());
         return ResponseEntity.ok(repo.save(authorFromDB));
     }
+
+    @DeleteMapping("authors/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id){
+
+        repo.deleteById(id);
+        return ResponseEntity.noContent().build();
+
+    }
 }
