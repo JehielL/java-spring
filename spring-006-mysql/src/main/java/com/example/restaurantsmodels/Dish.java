@@ -21,7 +21,7 @@ public class Dish {
     // si es frio o caliente
     // si es salado
     @ManyToOne
-    Restaurant restaurant;
+    //Restaurant restaurant;
     @ManyToMany
     private List<Dish> dishes = new ArrayList<>();
 

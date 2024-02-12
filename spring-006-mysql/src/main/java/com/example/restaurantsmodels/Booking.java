@@ -1,7 +1,6 @@
 package com.example.restaurantsmodels;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,10 +12,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table (name = "booking")
+@Table(name = "booking")
 public class Booking {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+   // private User user;
 
     private LocalDateTime date;
 
@@ -26,9 +29,7 @@ public class Booking {
 
     private String status;
 
-    private User user;
-
-    private Restaurant restaurant;
+    //private Restaurant restaurant;
 
     private Boolean interior;
 
