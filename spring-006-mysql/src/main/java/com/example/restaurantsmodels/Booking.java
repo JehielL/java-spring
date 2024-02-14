@@ -23,6 +23,8 @@ public class Booking {
 
     private LocalDateTime date;
 
+    private String title;
+
     private Integer numUsers;
 
     private String observations;
